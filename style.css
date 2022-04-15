@@ -16,16 +16,6 @@
 :root {
     --ff-serif: "Ovo", serif;
     --ff-sans-serif: "Exo", sans-serif;
-
-    /* Colors */
-    /*
-    --clr__dark: hsla(0, 0%, 10%, 1);
-    --clr__light: hsl(0, 5%, 90%, 0.9);
-    --clr__base-dark: hsl(180, 70%, 20%, 0.87);
-    --clr__base-light: hsl(180, 70%, 35%, 0.87);
-    --clr__accent-dark: hsl(0, 60%, 52%, 0.8);
-    --clr__accent-light: hsl(0, 90%, 74%, 0.8);
-    */ 
     
     /* HSL codes */
     --clr__dark: 0, 0%, 10%;
@@ -39,7 +29,6 @@
     --opc__light: 0.9;
     --opc__base: 0.87;
     --opc__accent: 0.8; 
-
 
     /* Font sizes*/ 
     --fs-900: 7rem;
@@ -61,8 +50,8 @@
     --fw-light: 300;  
 
     /* Flow spaces */
-    --flow-space__section: 2.5em;
-    --flow-space__div: 1.5em; 
+    --flow-space__section: 3em;
+    --flow-space__div: 2.25em; 
 
     /* Grid gap */
     --gap: 1.5rem;
@@ -248,6 +237,7 @@ h1 {
 h2 {
     font-size: clamp(var(--fs-600), 1.5vw + 1.5em, var(--fs-700));
     font-weight: var(--fw-regular);
+    margin-top: var(--fs-500);
 }
 
 h3 {
@@ -372,9 +362,11 @@ p {
 
 /* Thumbnails */ 
 .thumbnail__project {
-    height: 100%;
-    aspect-ratio: 1.2;
+   
+    width: 100%;
     background-color: aliceblue;
+    align-self: stretch;
+    outline: var(--ref-outline);
 }
 
 
@@ -439,7 +431,7 @@ p {
 }
 
 .hero__text p {
-    font-size: clamp(var(--fs-500), 1.5vw + 1rem, var(--fs-600)); 
+    font-size: clamp(var(--fs-400), 1.5vw + 1rem, var(--fs-600)); 
     font-weight: var(--fw-regular);
 }
 
@@ -448,9 +440,10 @@ p {
 }
 
 /* Projects */
-#projects {
-    /* background-image: url("images/background/architect.jpg"); */
-} 
+/* #projects {
+    background-image: url("images/background/architect.jpg");
+    
+}  */
 
 
 
@@ -515,9 +508,14 @@ p {
 
     .project {
         align-items: flex-end;
+        outline: 2px solid blue;
     }
 
+    /* .project + .project {
+        margin-top: 5rem;
+    } */
+
     .project__text {
-        padding: var(--fs-700) 0 var(--fs-500); 
+        padding-top: var(--fs-700); 
     }
 }
