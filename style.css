@@ -62,10 +62,7 @@
 
     /* Flow spaces */
     --flow-space__section: 2.5em;
-    --flow-space__div: 1.5em;
-
-    /* Golden ratio */
-    --golden-ratio: 1.618; 
+    --flow-space__div: 1.5em; 
 
     /* Grid gap */
     --gap: 1.5rem;
@@ -246,8 +243,6 @@ select {
 h1 {
     font-size: clamp(var(--fs-700), 1vw + 1rem, var(--fs-900));
     font-weight: var(--fw-regular);
-
-    outline: var(--ref-outline);
 }
 
 h2 {
@@ -261,7 +256,7 @@ h3 {
 }
 
 p {
-    font-size: clamp(var(--fs-300), .6vw + 1rem, var(--fs-500));
+    font-size: clamp(var(--fs-300), .6vw + 1rem, var(--fs-400));
     font-weight: var(--fw-light);
 }
 
@@ -377,7 +372,8 @@ p {
 
 /* Thumbnails */ 
 .thumbnail__project {
-    aspect-ratio: var(--golden-ratio, 1.618);
+    height: 100%;
+    aspect-ratio: 1.2;
     background-color: aliceblue;
 }
 
@@ -433,7 +429,6 @@ p {
 
 /* Hero */ 
 #hero {
-    outline: var(--ref-outline);
     margin: 0 auto; 
 }
 
@@ -452,6 +447,10 @@ p {
     margin: var(--fs-300) auto;
 }
 
+/* Projects */
+#projects {
+    /* background-image: url("images/background/architect.jpg"); */
+} 
 
 
 
@@ -471,14 +470,16 @@ p {
 
 @media only screen and (min-width: 600px) {
 /* 3. UTILITY CLASSES ---- */
+    .flex, .flex-reverse {
+        justify-content: space-between;
+    }
+    
     .flex {
         flex-direction: row;
-        justify-content: space-between;
     }
 
     .flex-reverse {
         flex-direction: row-reverse;
-        justify-content: space-between;
     }
 
     .wide {
@@ -512,4 +513,11 @@ p {
         margin-bottom: var(--fs-200);
     }
 
+    .project {
+        align-items: flex-end;
+    }
+
+    .project__text {
+        padding: var(--fs-700) 0 var(--fs-500); 
+    }
 }
