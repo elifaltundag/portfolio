@@ -31,7 +31,7 @@
     --opc__accent: 0.8; 
 
     /* Font sizes*/ 
-    --fs-900: 7rem;
+    --fs-900: 6.75rem;
     --fs-800: 6.25rem;
     --fs-700: 3.5rem;
     --fs-600: 2.25rem;
@@ -230,7 +230,7 @@ select {
 
 /* Typography */
 h1 {
-    font-size: clamp(var(--fs-700), 1vw + 1rem, var(--fs-900));
+    font-size: clamp(var(--fs-700), 3vw + 3rem, var(--fs-900));
     font-weight: var(--fw-regular);
 }
 
