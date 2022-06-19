@@ -15,14 +15,17 @@
     
     /** Colors */ 
     --clr-dark: 0, 0%, 10%;
-    --clr-light: 0, 0%, 80%;
-    --clr-base-dark: 200, 40%, 15%; 
-    --clr-base-light: 200, 40%, 35%;
-    --clr-accent-dark: 0, 70%, 67%;
-    --clr-accent-light: 0, 70%, 78%;
+    --clr-light: 0, 0%, 87%;
+    --clr-base-dark: 200, 65%, 15%; 
+    --clr-base-light: 200, 65%, 35%;
+    --clr-accent-dark: 0, 90%, 67%;
+    --clr-accent-light: 0, 90%, 78%;
+
+    /** Margins and paddings */
+    --pad-sctn: 1em;
 }
 
-/* 9, 38, 52 */ 
+
 
 /*! -------------------- */
 /*! RESET CSS            */
@@ -43,7 +46,7 @@ picture, figure, img {
 
 /** Set up the body */
 body {
-    overflow-x: hidden; /* Wasn't added by Kevin. https://piccalil.li/tutorial/creating-a-full-bleed-css-utility/ */ 
+    overflow-x: hidden; 
     line-height: 1.5;
     min-height: 100vh;
     background-color: hsl(var(--clr-base-dark));
@@ -85,8 +88,6 @@ figure {
     border: 0;
 } 
 
-
-
 /*! -------------------- */
 /*! TYPOGRAPHY           */
 /*! -------------------- */
@@ -97,15 +98,26 @@ h1, h2, h3 {
 
 p {
     font-family: var(--ff-sans-serif);
-    font-weight: var(--fw-light);
+    font-weight: var(--fw-medium);
 }
 
 a {
     color: hsl(var(--clr-accent-light));
     text-decoration: none;
+    font-family: var(--ff-sans-serif);
 }
 
+/*! -------------------- */
+/*! SECTIONAL CLASSES    */
+/*! -------------------- */
+.section {
+    width: 100%;
+    padding: 0 var(--pad-sctn);
+}
 
+.accent {
+    color: hsl(var(--clr-accent-light));
+}
 
 
 /*! -------------------- */
@@ -116,7 +128,58 @@ a {
 }
 
 
-
+/*! -------------------- */
+/*! FOOTER               */
+/*! -------------------- */
 footer {
     background-color: hsl(var(--clr-dark));
+}
+
+/*! -------------------- */
+/*! HERO                 */
+/*! -------------------- */
+.hero__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero__title {
+    font-size: clamp(3rem, 2rem + 5vw, 5rem)
+}
+
+.hero__subtitle {
+    color: hsl(var(--clr-accent-light));
+    font-weight: var(--fw-semibold);
+    font-size: clamp(1.2rem, 1rem + 1.1vw, 2.5rem);
+}
+
+.hero__body {
+    font-size: clamp(1rem, 0.8rem + 0.8vw, 1.8rem);
+}
+
+.hero__photo {
+    display: none;
+}
+
+/*! -------------------- */
+/*! MEDIA QUERIES        */
+/*! -------------------- */
+@media screen and (min-width: 600px) {
+    #hero {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1;
+        grid-template-areas: "txt txt txt txt txt txt txt txt . img img img";
+        column-gap: 2%;
+    }
+
+    .hero__text {
+        grid-area: txt;
+    }
+
+    .hero__photo {
+        grid-area: img;
+        display: block;
+    }
 }
