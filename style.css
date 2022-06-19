@@ -16,13 +16,16 @@
     /** Colors */ 
     --clr-dark: 0, 0%, 10%;
     --clr-light: 0, 0%, 87%;
-    --clr-base-dark: 200, 65%, 15%; 
-    --clr-base-light: 200, 65%, 35%;
+    --clr-base-dark: 192, 65%, 15%; 
+    --clr-base-light: 192, 65%, 35%;
     --clr-accent-dark: 0, 90%, 67%;
     --clr-accent-light: 0, 90%, 78%;
 
     /** Margins and paddings */
     --pad-sctn: 1em;
+
+    /** Grid */
+    --cols: 12;
 }
 
 
@@ -31,15 +34,9 @@
 /*! RESET CSS            */
 /*! -------------------- */
 
-/** Box sizing */
+/** Box sizing, margins & paddings */
 *, *::before, *::after {
     box-sizing: border-box;
-}
-
-/** Margins & paddings */
-body,
-h1, h2, h3, h4, h5, h6, p,
-picture, figure, img {
     margin: 0;
     padding: 0;
 }
@@ -49,8 +46,6 @@ body {
     overflow-x: hidden; 
     line-height: 1.5;
     min-height: 100vh;
-    background-color: hsl(var(--clr-base-dark));
-    color: hsl(var(--clr-light));
 }
 
 /** Make images easier to work with */ 
@@ -108,36 +103,69 @@ a {
 }
 
 /*! -------------------- */
+/*! BUTTONS              */
+/*! -------------------- */
+.btn {
+    font-family: var(--ff-sans-serif);
+    font-size: clamp(1.1rem, 0.8rem + 1vw, 1.5rem);
+    font-weight: var(--fw-bold);
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 1.5em;
+    border: none;
+
+    transform: scale(1);
+    transition: transform 200ms ease;
+}
+
+@media screen and (hover) {
+    .btn:hover {
+        transform: scale(1.05);
+    }
+}
+
+/*! -------------------- */
 /*! SECTIONAL CLASSES    */
 /*! -------------------- */
 .section {
     width: 100%;
-    padding: 0 var(--pad-sctn);
+}
+
+.container {
+    width: min(100%, 1600px);
+    margin: 0 auto;
+    padding-right: clamp(1rem, 0.8rem + 5vw, 5rem);
+    padding-left: clamp(1rem, 0.8rem + 5vw, 5rem);
 }
 
 .accent {
     color: hsl(var(--clr-accent-light));
 }
 
+/*! -------------------- */
+/*! HEADER               */
+/*! -------------------- */
+header {
+    background-color: hsl(var(--clr-base-dark));
+}
+
 
 /*! -------------------- */
 /*! NAVBAR               */
 /*! -------------------- */
-.nav {
-    background-color: hsl(var(--clr-dark));
-}
 
-
-/*! -------------------- */
-/*! FOOTER               */
-/*! -------------------- */
-footer {
-    background-color: hsl(var(--clr-dark));
-}
 
 /*! -------------------- */
 /*! HERO                 */
 /*! -------------------- */
+#hero {
+    background-color: hsl(var(--clr-dark));
+    color: hsl(var(--clr-light));
+    padding: 5em 0;
+}
+
 .hero__text {
     display: flex;
     flex-direction: column;
@@ -145,13 +173,17 @@ footer {
 }
 
 .hero__title {
-    font-size: clamp(3rem, 2rem + 5vw, 5rem)
+    font-size: clamp(3rem, 2rem + 5vw, 5rem);
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .hero__subtitle {
     color: hsl(var(--clr-accent-light));
     font-weight: var(--fw-semibold);
-    font-size: clamp(1.2rem, 1rem + 1.1vw, 2.5rem);
+    font-size: clamp(1.2rem, 1rem + 1vw, 2.5rem);
+    margin-bottom: 0.7em;
 }
 
 .hero__body {
@@ -163,15 +195,30 @@ footer {
 }
 
 /*! -------------------- */
+/*! FOOTER               */
+/*! -------------------- */
+footer {
+    background-color: hsl(var(--clr-dark));
+}
+
+
+
+
+/*! -------------------- */
 /*! MEDIA QUERIES        */
 /*! -------------------- */
-@media screen and (min-width: 600px) {
-    #hero {
+@media screen and (min-width: 750px) {
+    .hero,
+    .projects,
+    .considerations,
+    .contact {
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
+        grid-template-columns: repeat(var(--cols), 1fr);
+    }
+
+    .hero {
         grid-template-rows: 1;
-        grid-template-areas: "txt txt txt txt txt txt txt txt . img img img";
-        column-gap: 2%;
+        grid-template-areas: "txt txt txt txt txt txt txt . img img img img";
     }
 
     .hero__text {
@@ -182,4 +229,35 @@ footer {
         grid-area: img;
         display: block;
     }
+
+    .img__container {
+        height: 100%;
+        border-radius: 1em;
+        overflow: hidden;
+    }
+
+    .img__photo {
+        height: 100%;
+        object-fit: cover;
+        object-position: 70%;
+    }
 }
+
+/* @media screen and (min-width: 900px) {
+    :root {
+        --pad-sctn: 10%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    :root {
+        --pad-sctn: 15%;
+    }
+}
+
+
+@media screen and (min-width: 1600px) {
+    :root {
+        --pad-sctn: 20%;
+    }
+} */
