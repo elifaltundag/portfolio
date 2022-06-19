@@ -6,12 +6,6 @@
     --ff-serif: 'Bitter', Cambria, Cochin, Georgia, Times, serif;
     --ff-sans-serif: 'Exo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Sans Unicode', Geneva, sans-serif;
     --ff-monosp: 'Inconsolata', monospace;
-
-    /** Font weights */
-    --fw-light: 300;
-    --fw-medium: 400;
-    --fw-semibold: 500;
-    --fw-bold: 600;
     
     /** Colors */ 
     --clr-dark: 0, 0%, 10%;
@@ -46,6 +40,7 @@ body {
     overflow-x: hidden; 
     line-height: 1.5;
     min-height: 100vh;
+    font-family: var(--ff-sans-serif);
 }
 
 /** Make images easier to work with */ 
@@ -54,6 +49,17 @@ picture,
 figure {
     max-width: 100%;
     display: block;
+}
+
+/** Reset links */
+a {
+    color: hsl(var(--clr-accent-light));
+    text-decoration: none;
+}
+
+/** Reset list styling */
+ul, ol, li {
+    list-style: none;
 }
 
 /** A11Y - Remove all animations, transitions and smooth scroll for people who've turned them off */
@@ -83,24 +89,8 @@ figure {
     border: 0;
 } 
 
-/*! -------------------- */
-/*! TYPOGRAPHY           */
-/*! -------------------- */
-h1, h2, h3 {
-    font-family: var(--ff-serif);
-    font-weight: var(--fw-bold);
-}
 
-p {
-    font-family: var(--ff-sans-serif);
-    font-weight: var(--fw-medium);
-}
 
-a {
-    color: hsl(var(--clr-accent-light));
-    text-decoration: none;
-    font-family: var(--ff-sans-serif);
-}
 
 /*! -------------------- */
 /*! BUTTONS              */
@@ -108,7 +98,7 @@ a {
 .btn {
     font-family: var(--ff-sans-serif);
     font-size: clamp(1.1rem, 0.8rem + 1vw, 1.5rem);
-    font-weight: var(--fw-bold);
+    font-weight: 700;
     padding: 0.5em 1em;
     border-radius: 0.5em;
     overflow: hidden;
@@ -129,15 +119,20 @@ a {
 /*! -------------------- */
 /*! SECTIONAL CLASSES    */
 /*! -------------------- */
-.section {
-    width: 100%;
-}
-
 .container {
     width: min(100%, 1600px);
     margin: 0 auto;
     padding-right: clamp(1rem, 0.8rem + 5vw, 5rem);
     padding-left: clamp(1rem, 0.8rem + 5vw, 5rem);
+}
+
+.section {
+    width: 100%;
+}
+
+.section__title {
+    font-size: clamp(1.2rem, 1rem + 1vw, 2.5rem);
+    grid-column: 1 / 13;
 }
 
 .accent {
@@ -166,6 +161,11 @@ header {
     padding: 5em 0;
 }
 
+.hero {
+    display: flex;
+    flex-direction: column;
+}
+
 .hero__text {
     display: flex;
     flex-direction: column;
@@ -173,16 +173,19 @@ header {
 }
 
 .hero__title {
+    font-family: var(--ff-serif);
     font-size: clamp(3rem, 2rem + 5vw, 5rem);
+    font-weight: 500;
     line-height: 1;
     margin-top: 0;
     margin-bottom: 0;
 }
 
 .hero__subtitle {
-    color: hsl(var(--clr-accent-light));
-    font-weight: var(--fw-semibold);
+    font-family: var(--ff-serif);
     font-size: clamp(1.2rem, 1rem + 1vw, 2.5rem);
+    font-weight: 400;
+    color: hsl(var(--clr-accent-light));
     margin-bottom: 0.7em;
 }
 
@@ -193,6 +196,34 @@ header {
 .hero__photo {
     display: none;
 }
+
+/*! -------------------- */
+/*! PROJECTS             */
+/*! -------------------- */
+#projects {
+    background-color: hsl(var(--clr-base-dark));
+    color: hsl(var(--clr-light));
+}
+
+.projects {    
+    display: flex;
+    flex-direction: column;
+}
+
+.projects__websites,
+.projects__js-apps {
+    display: flex;
+    flex-direction: column;
+}
+
+.projects__thumbnails-container {
+    width: 100%;
+    height: 100%;
+    /* background-color: hsl(var(--clr-accent-light));
+    outline: 2px solid hsl(var(--clr-dark)); */
+}
+
+
 
 /*! -------------------- */
 /*! FOOTER               */
@@ -209,7 +240,8 @@ footer {
 /*! -------------------- */
 @media screen and (min-width: 750px) {
     .hero,
-    .projects,
+    .projects__websites,
+    .projects__js-apps,
     .considerations,
     .contact {
         display: grid;
@@ -241,23 +273,69 @@ footer {
         object-fit: cover;
         object-position: 70%;
     }
+
+    .projects__thumbnails-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .projects__websites {
+        grid-template-rows: 1;
+        grid-template-areas: "tmb tmb tmb tmb tmb tmb tmb . txt txt txt txt";
+    }
+
+    #thumbnails__websites {
+        grid-area: tmb;
+    }
+
+    #websites__text {
+        grid-area: txt;
+    }
+
+    .projects__js-apps {
+        grid-template-rows: 1;
+        grid-template-areas: "txt txt txt txt . tmb tmb tmb tmb tmb tmb tmb";
+    }
+
+    #thumbnails__js-apps {
+        grid-area: tmb;
+    }
+
+    #js-apps__text {
+        grid-area: txt;
+    }
+
 }
 
-/* @media screen and (min-width: 900px) {
-    :root {
-        --pad-sctn: 10%;
+@media screen and (min-width: 1000px) {
+    .projects__thumbnails-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
     }
 }
 
-@media screen and (min-width: 1200px) {
-    :root {
-        --pad-sctn: 15%;
-    }
-}
+
 
 
 @media screen and (min-width: 1600px) {
-    :root {
-        --pad-sctn: 20%;
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+            "title title"
+            "wbs aps"
     }
-} */
+
+    .projects__websites {
+        grid-area: wbs;
+        display: flex;
+    }
+
+    .projects__js-apps {
+        grid-area: aps;
+        display: flex;
+    }
+}
