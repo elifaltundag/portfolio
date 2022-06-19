@@ -202,6 +202,8 @@ header {
 /*! -------------------- */
 #projects {
     background-color: hsl(var(--clr-base-dark));
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='399' viewBox='0 0 200 399'%3E%3Cg fill='%23dedede' fill-opacity='0.1'%3E%3Cpath d='M0 399V0h1v1.99L200 399h-1.12L1 4.22V399H0zM200 2h-.12l-1-2H200v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+    background-position: 0% 90%;
     color: hsl(var(--clr-light));
 }
 
@@ -222,6 +224,15 @@ header {
     /* background-color: hsl(var(--clr-accent-light));
     outline: 2px solid hsl(var(--clr-dark)); */
 }
+
+.thumbnail__prj {
+    width: min(100%, 400px);
+    margin: 0 auto;
+    background-color: hsla(var(--clr-accent-light), 0.2);
+    text-align: center;
+}
+
+
 
 
 
@@ -250,7 +261,7 @@ footer {
 
     .hero {
         grid-template-rows: 1;
-        grid-template-areas: "txt txt txt txt txt txt txt . img img img img";
+        grid-template-areas: "txt txt txt txt txt txt txt txt . img img img";
     }
 
     .hero__text {
@@ -282,7 +293,7 @@ footer {
 
     .projects__websites {
         grid-template-rows: 1;
-        grid-template-areas: "tmb tmb tmb tmb tmb tmb tmb . txt txt txt txt";
+        grid-template-areas: "tmb tmb tmb tmb tmb tmb tmb tmb . txt txt txt";
     }
 
     #thumbnails__websites {
@@ -295,7 +306,7 @@ footer {
 
     .projects__js-apps {
         grid-template-rows: 1;
-        grid-template-areas: "txt txt txt txt . tmb tmb tmb tmb tmb tmb tmb";
+        grid-template-areas: "txt txt txt . tmb tmb tmb tmb tmb tmb tmb tmb";
     }
 
     #thumbnails__js-apps {
@@ -306,9 +317,13 @@ footer {
         grid-area: txt;
     }
 
+    .thumbnail__prj {
+        width: unset;
+        margin: 0;
+    }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
     .projects__thumbnails-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -319,7 +334,7 @@ footer {
 
 
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1800px) {
     .projects {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
