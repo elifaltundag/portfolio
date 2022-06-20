@@ -20,6 +20,14 @@
 
     /** Grid */
     --cols: 12;
+
+    /** Border radius */
+    --br-photo: 1rem;
+    --br-form: 1rem;
+    --br-thmb: 1rem;
+    --br-btn: 0.5rem;
+    --br-form-elm: 0.5rem;
+    
 }
 
 
@@ -110,7 +118,7 @@ p {
     font-size: clamp(1.1rem, 0.8rem + 1vw, 1.5rem);
     font-weight: 700;
     padding: 0.5em 1em;
-    border-radius: 0.5em;
+    border-radius: var(--br-btn);
     overflow: hidden;
     cursor: pointer;
     margin-top: 1.5em;
@@ -262,7 +270,7 @@ header {
     color: hsl(var(--clr-accent-dark));
     text-align: center;
     
-    border-radius: 1em;
+    border-radius: var(--br-thmb);
     border: none;
     position: relative;
 }
@@ -356,7 +364,7 @@ header {
 #contact {
     background-image: url("./images/contact/architecture_simple/andrei_bocan_xlarge_base.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: left 30% center;
     background-repeat: no-repeat;
     min-height: 1000px;
 }
@@ -366,6 +374,40 @@ header {
     font-size: clamp(1.4rem, 1rem + 1.1vw, 2.2rem);
 }
 
+
+/*! -------------------- */
+/*! FORM                 */
+/*! -------------------- */
+.form__container {
+    background-color: hsl(var(--clr-dark));
+    color: hsl(var(--clr-accent-light));
+    border-radius: var(--br-form);
+    padding: 1.5em;
+}
+
+.contact__info {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0;
+}
+
+label, input, textarea {
+    font-size: clamp(1rem, 0.9rem + 0.8vw, 1.4rem);
+    resize: none;
+}
+
+input, textarea {
+    outline: none;
+    border: none;
+    background-color: hsla(var(--clr-light), 1);
+    padding: 0.25em;
+    border-radius: var(--br-form-elm);
+}
+
+#submit-form {
+    display: block;
+    margin: 0 auto;
+}
 
 
 /*! -------------------- */
@@ -415,7 +457,7 @@ footer {
 
     .img__container {
         height: 100%;
-        border-radius: 1em;
+        border-radius: var(--br-photo);
         overflow: hidden;
     }
 
