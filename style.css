@@ -10,8 +10,8 @@
     /** Colors */ 
     --clr-dark: 0, 0%, 10%;
     --clr-light: 0, 0%, 87%;
-    --clr-base-dark: 192, 65%, 15%; 
-    --clr-base-light: 192, 65%, 35%;
+    --clr-base-dark: 180, 65%, 15%; 
+    --clr-base-light: 180, 65%, 35%;
     --clr-accent-dark: 0, 90%, 67%;
     --clr-accent-light: 0, 90%, 78%;
 
@@ -366,6 +366,8 @@ header {
     font-size: clamp(1.4rem, 1rem + 1.1vw, 2.2rem);
 }
 
+
+
 /*! -------------------- */
 /*! FOOTER               */
 /*! -------------------- */
@@ -384,8 +386,7 @@ footer {
     .hero,
     .projects__websites,
     .projects__js-apps,
-    .consd__container,
-    .contact {
+    .consd__container {
         display: grid;
         grid-template-columns: repeat(var(--cols), 1fr);
         column-gap: 1vw;
@@ -451,7 +452,6 @@ footer {
     }
 
     /** Thumbnails */
-
     #thmbs__websites {
         grid-area: tmb;
     }
@@ -496,6 +496,11 @@ footer {
 
     #consd__identity {
         grid-area: idnt;
+    }
+
+    /** Contact */
+    .section__subtitle__contact {
+        text-align: left;
     }
 }
 

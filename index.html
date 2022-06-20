@@ -156,7 +156,28 @@
             <div class="container contact">
                 <h2 class="section__title">Interested?</h2>
                 <p class="section__subtitle__contact"> Contact me and let's build your website!</p>
-                
+
+                <div class="form__container">
+                    <form action="url" id="contact-form" method="post">
+                        <div class="contact__info">
+                            <label for="name" id="name-label">Name &lpar;&ast;&rpar;</label>
+                            <input type="text" required name="name" id="name" placeholder="Ford Prefect">
+                        </div>
+                        <div class="contact__info">
+                            <label for="email" id="email-label">Email &lpar;&ast;&rpar;</label>
+                            <input type="email" required name="email" id="email" placeholder="ford.prefect@gmail.com">
+                        </div>
+                        <div class="contact__info">
+                            <label for="subject" id="subject-label">Subject</label>
+                            <input type="subject" required name="subject" id="subject" placeholder="ford.prefect@gmail.com">
+                        </div>
+                        <div class="contact__info">
+                            <label for="message" id="message-label">Message</label>
+                            <textarea name="message" id="message" rows="5" minlength="10" maxlength="10000" placeholder="Type your message..."></textarea>
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </section>
     </main>
