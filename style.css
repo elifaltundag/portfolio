@@ -423,7 +423,7 @@ footer {
 /*! -------------------- */
 /*! MEDIA QUERIES        */
 /*! -------------------- */
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 750px) { /** Tablet */
     /** General */
     .hero,
     .projects__websites,
@@ -546,7 +546,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1200px) { /** Laptop */
     .projects__thmbs-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -555,7 +555,7 @@ footer {
 }
 
 
-@media screen and (min-width: 1800px) {
+@media screen and (min-width: 1800px) { /** Desktop - XLarge */
     .projects {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
