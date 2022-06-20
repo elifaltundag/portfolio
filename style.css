@@ -8,12 +8,12 @@
     --ff-monosp: 'Inconsolata', monospace;
     
     /** Colors */ 
-    --clr-dark: 0, 0%, 10%;
-    --clr-light: 0, 0%, 87%;
+    --clr-dark: 0, 0%, 15%;
+    --clr-light: 0, 0%, 80%;
     --clr-base-dark: 180, 65%, 15%; 
     --clr-base-light: 180, 65%, 35%;
-    --clr-accent-dark: 0, 90%, 67%;
-    --clr-accent-light: 0, 90%, 78%;
+    --clr-accent-dark: 0, 80%, 62%;
+    --clr-accent-light: 0, 90%, 70%;
 
     /** Margins and paddings */
     --pad-sctn: 1em;
@@ -267,7 +267,7 @@ header {
     min-height: 250px;
     margin: 0 auto;
     background-color: hsl(var(--clr-light));
-    color: hsl(var(--clr-accent-dark));
+    color: hsl(var(--clr-accent-light));
     text-align: center;
     
     border-radius: var(--br-thmb);
@@ -399,9 +399,14 @@ label, input, textarea {
 input, textarea {
     outline: none;
     border: none;
-    background-color: hsla(var(--clr-light), 1);
+    background-color: hsla(var(--clr-light), 0.1);
+    color: hsl(var(--clr-light));
     padding: 0.25em;
     border-radius: var(--br-form-elm);
+}
+
+::placeholder {
+    color: hsla(var(--clr-light), 0.6);
 }
 
 #submit-form {
