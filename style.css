@@ -25,7 +25,7 @@
     --br-photo: 1rem;
     --br-form: 1rem;
     --br-thmb: 1rem;
-    --br-btn: 0.5rem;
+    --br-btn: 0.75rem;
     --br-form-elm: 0.5rem;
     
 }
@@ -48,6 +48,9 @@ body {
     line-height: 1.5;
     min-height: 100vh;
     font-family: var(--ff-sans-serif);
+
+    background-color: hsl(var(--clr-dark));
+    color: hsl(var(--clr-light));
 }
 
 /** Make images easier to work with */ 
@@ -141,6 +144,10 @@ label, input, textarea {
 }
 
 .btn {
+    font-size: 100%;
+}
+
+#btn__about-me {
     font-size: clamp(1.1rem, 0.8rem + 1vw, 1.5rem);
 }
 
@@ -228,7 +235,7 @@ header {
 /*! -------------------- */
 #projects {
     background-color: hsl(var(--clr-base-dark));
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='399' viewBox='0 0 200 399'%3E%3Cg fill='%23dedede' fill-opacity='0.1'%3E%3Cpath d='M0 399V0h1v1.99L200 399h-1.12L1 4.22V399H0zM200 2h-.12l-1-2H200v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='399' viewBox='0 0 200 399'%3E%3Cg fill='%23dedede' fill-opacity='0.1'%3E%3Cpath d='M0 399V0h1v1.99L200 399h-1.12L1 4.22V399H0zM200 2h-.12l-1-2H200v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E"); */
     background-position: 0% 90%;
     color: hsl(var(--clr-light));
 }
@@ -273,7 +280,9 @@ header {
     width: min(100%, 400px);
     min-height: 250px;
     margin: 0 auto;
-    background-color: hsl(var(--clr-light));
+    background-image: linear-gradient(180deg, 
+        hsl(var(--clr-light)) 0%,
+        hsl(var(--clr-dark)) 100%);
     color: hsl(var(--clr-accent-light));
     text-align: center;
     
@@ -372,6 +381,7 @@ header {
 .contact {
     display: flex;
     flex-direction: column;
+    color: hsl(var(--clr-light));
 }
 
 .section__subtitle__contact,
@@ -405,7 +415,6 @@ label, input, textarea {
 }
 
 input, textarea {
-    outline: none;
     border: none;
     background-color: hsla(var(--clr-light), 0.1);
     color: hsl(var(--clr-light));
@@ -433,26 +442,64 @@ footer {
 /*! -------------------- */
 /*! BUTTONS              */
 /*! -------------------- */
+.btn__container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    row-gap: 0.5rem;
+}
+
 .btn {
     font-family: var(--ff-sans-serif);
-    font-weight: 700;
     padding: 0.5em 1em;
     border-radius: var(--br-btn);
     overflow: hidden;
     cursor: pointer;
-    margin-top: 1.5em;
     border: none;
 
     transform: scale(1);
     transition: transform 200ms ease;
 }
 
+.btn-primary {
+    background-color: hsl(var(--clr-accent-light));
+    color: hsl(var(--clr-dark));
+    border: 3px solid hsl(var(--clr-accent-light));
+    box-shadow: 
+        inset 0px 3px 0 hsl( var(--clr-dark) ),
+        inset 0px -3px 0 hsl( var(--clr-dark) ),
+        inset 3px 0 hsl( var(--clr-dark) ),
+        inset -3px 0 hsl( var(--clr-dark) );
+    font-weight: 700;
+}
+
+.btn-secondary {
+    background-color: hsl(var(--clr-dark));
+    color: hsl(var(--clr-accent-light));
+    border: 3px solid hsl(var(--clr-accent-light));
+    font-weight: 600;
+}
+
+/** Button states */
+.btn:focus {
+    transform: scale(1.05);
+    filter: brightness(120%) saturate(130%);
+    /* outline: 3px solid hsl(var(--clr-light));
+    outline-offset: 3px; */
+}
+
 @media screen and (hover) {
     .btn:hover {
         transform: scale(1.05);
+        filter: brightness(120%) saturate(130%);
     }
 }
 
+.btn:active {
+    transform: scale(0.98);
+    filter: brightness(90%);
+    /* outline: 0; */
+}
 
 /*! -------------------- */
 /*! MEDIA QUERIES        */
