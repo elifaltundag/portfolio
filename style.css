@@ -147,7 +147,8 @@ label, input, textarea {
     font-size: 100%;
 }
 
-#btn__about-me {
+#btn__about-me,
+#submit-form {
     font-size: clamp(1.1rem, 0.8rem + 1vw, 1.5rem);
 }
 
@@ -484,8 +485,8 @@ footer {
 .btn:focus {
     transform: scale(1.05);
     filter: brightness(120%) saturate(130%);
-    /* outline: 3px solid hsl(var(--clr-light));
-    outline-offset: 3px; */
+    outline: 2px solid hsl(var(--clr-light));
+    outline-offset: 2px;
 }
 
 @media screen and (hover) {
@@ -498,7 +499,7 @@ footer {
 .btn:active {
     transform: scale(0.98);
     filter: brightness(90%);
-    /* outline: 0; */
+    outline: 0;
 }
 
 /*! -------------------- */
