@@ -64,8 +64,6 @@ figure {
 /** Reset links */
 a {
     text-decoration: none;
-    display: inline-block;
-    width: 100%;
 }
 
 /** Reset list styling */
@@ -492,6 +490,13 @@ footer {
     filter: brightness(90%);
     outline: 0;
 }
+
+.link-external {
+    display: inline-block;
+    width: 100%;
+}
+
+
 
 /*! -------------------- */
 /*! MEDIA QUERIES        */
