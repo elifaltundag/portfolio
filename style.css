@@ -152,12 +152,11 @@ label, input, textarea {
     font-size: clamp(1.1rem, 0.8rem + 1vw, 1.5rem);
 }
 
-.projects__title,
 .consd__title {
     font-size: clamp(1.2rem, 1rem + 1.3vw, 2.5rem);
 }
 
-.section__subtitle__consd {
+.section__subtitle {
     font-size: clamp(1.2rem, 1rem + 0.8vw, 2rem);
 }
 
@@ -247,11 +246,10 @@ header {
     row-gap: 2em;
 }
 
-.projects__websites,
-.projects__js-apps {
+/* .projects__websites {
     display: flex;
     flex-direction: column;
-}
+} */
 
 .projects__thmbs-container {
     width: 100%;
@@ -259,16 +257,6 @@ header {
     display: flex;
     flex-direction: column;
     row-gap: 5vw;
-}
-
-.projects__text {
-    display: flex;
-    flex-direction: column;
-}
-
-.projects__title,
-.projects__body {
-    text-align: center;
 }
 
 
@@ -508,8 +496,7 @@ footer {
 @media screen and (min-width: 750px) { /** Tablet */
     /** General */
     .hero,
-    .projects__websites,
-    .projects__js-apps,
+    /* .projects__websites, */
     .consd__container {
         display: grid;
         grid-template-columns: repeat(var(--cols), 1fr);
@@ -551,16 +538,6 @@ footer {
 
     
     /** Projects */
-    .projects {
-        row-gap: 4rem;
-    }
-
-    .projects__title,
-    .projects__body {
-        text-align: left;
-    }
-
-
     .projects__thmbs-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -569,10 +546,12 @@ footer {
         row-gap: 1vw;
     }
 
-    .projects__websites {
-        grid-template-rows: 1;
-        grid-template-areas: "tmb tmb tmb tmb tmb tmb tmb tmb . txt txt txt";
-    }
+    /* .projects__websites {
+        grid-template-rows: 2;
+        grid-template-areas: 
+            "txt txt txt txt txt txt txt txt txt txt txt txt"
+            "tmb tmb tmb tmb tmb tmb tmb tmb tmb tmb tmb tmb";
+    } */
 
     /** Thumbnails */
     #thmbs__websites {
@@ -580,19 +559,6 @@ footer {
     }
 
     #websites__text {
-        grid-area: txt;
-    }
-
-    .projects__js-apps {
-        grid-template-rows: 1;
-        grid-template-areas: "txt txt txt . tmb tmb tmb tmb tmb tmb tmb tmb";
-    }
-
-    #thmbs__js-apps {
-        grid-area: tmb;
-    }
-
-    #js-apps__text {
         grid-area: txt;
     }
 
@@ -670,43 +636,10 @@ footer {
 
 }
 
-@media screen and (min-width: 1200px) { /** Laptop */
+@media screen and (min-width: 1200px) { /** Laptop and X-Large*/
     .projects__thmbs-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr;
-    }
-}
-
-
-@media screen and (min-width: 1800px) { /** Desktop - XLarge */
-    .projects {
-        display: grid;
-        grid-template-columns: 1fr minmax(25px, 5vw) 1fr;
-        grid-template-rows: repeat(2, auto);
-        grid-template-areas:
-            "title title title"
-            "wbs . aps";
-    }
-
-    .projects__websites {
-        grid-area: wbs;
-    }
-
-    .projects__js-apps {
-        grid-area: aps;
-    }
-
-    .projects__websites,
-    .projects__js-apps {
-        display: flex;
-    }
-
-    .projects__text > * {
-        text-align: center;
-    }
-
-    .projects__thmbs-container {
-        margin-top: clamp(2rem, 1rem + 1vw, 3rem);
     }
 }
