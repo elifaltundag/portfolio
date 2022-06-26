@@ -63,7 +63,7 @@ figure {
 
 /** Reset links */
 a {
-    color: hsl(var(--clr-accent-light));
+    /* color: hsl(var(--clr-accent-light)); */
     text-decoration: none;
 }
 
@@ -452,7 +452,6 @@ footer {
 
 .btn-primary {
     background-color: hsl(var(--clr-accent-light));
-    color: hsl(var(--clr-dark));
     border: 3px solid hsl(var(--clr-accent-light));
     box-shadow: 
         inset 0px 3px 0 hsl( var(--clr-dark) ),
@@ -462,11 +461,18 @@ footer {
     font-weight: 700;
 }
 
+.btn-primary a {
+    color: hsl(var(--clr-dark));
+}
+
 .btn-secondary {
     background-color: hsl(var(--clr-dark));
-    color: hsl(var(--clr-accent-light));
     border: 3px solid hsl(var(--clr-accent-light));
     font-weight: 600;
+}
+
+.btn-secondary a {
+    color: hsl(var(--clr-accent-light));
 }
 
 /** Button states */
