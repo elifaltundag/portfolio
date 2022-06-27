@@ -49,8 +49,11 @@ body {
     min-height: 100vh;
     font-family: var(--ff-sans-serif);
 
-    background-color: hsl(var(--clr-dark));
+    background-color: hsl(var(--clr-light));
     color: hsl(var(--clr-light));
+
+    display: flex;
+    flex-direction: column;
 }
 
 /** Make images easier to work with */ 
@@ -265,22 +268,37 @@ label, input, textarea {
 /*! -------------------- */
 /*! HEADER               */
 /*! -------------------- */
-header {
+#header {
     background-color: hsl(var(--clr-base-dark));
-    padding: 3rem 0;
+    padding: 2.2rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid hsl(var(--clr-dark));
+}
+
+#header[on-screen="initial"] #nav__list,
+#header[on-screen="partial"] #nav__list {
+
 }
 
 #header[on-screen="initial"],
 #header[on-screen="partial"] {
+    transform-origin: top;
     transform: translateY(-70%);
 }
 
+
 #header[on-screen="partial"] {
+    transform-origin: top;
     transition: transform 400ms ease;
 }
 
 #header[on-screen="full"] {
+    transform-origin: top;
     transform: translateY(0%);
+    
     transition: transform 400ms ease;
 }
 
@@ -296,25 +314,24 @@ header {
     padding: 2rem 0;
 }
 
-/* #nav__list[on-screen="false"] {
-    transform: translateY(-200%);
-}
-
-#nav__list[on-screen="true"] {
-    transform: translateY(100%);
-} */
 
 /*! -------------------- */
 /*! HAMBURGER & CROSS    */
 /*! -------------------- */
+.container__nav-toggle {
+    position: sticky;
+    top: 0;
+    z-index: 15;
+}
+
 #nav-toggle {
     background-color: transparent;
     border: transparent;
     padding: 1rem;
     position: absolute;
     right: 1rem;
-    top: 1rem;
-    z-index: 5;
+    top: 0.5rem;
+    z-index: 20;
 }
 
 #hamburger-btn {
@@ -409,7 +426,7 @@ header {
 #hero {
     background-color: hsl(var(--clr-dark));
     color: hsl(var(--clr-light));
-    padding: clamp(75px, 10vw, 250px) 0;
+    padding: clamp(150px, 10vw, 250px) 0 clamp(75px, 10vw, 250px);
 }
 
 .hero {
@@ -734,6 +751,10 @@ footer {
 }
 
 @media screen and (min-width: 900px) { /** Tablet */
+    #nav-toggle {
+        display: none;
+    }
+
     .contact {
         display: grid;
         grid-template-columns: 1fr minmax(50px, 10vw) 1fr;
