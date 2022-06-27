@@ -42,6 +42,12 @@
     padding: 0;
 }
 
+/** Scroll */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+}
+
 /** Set up the body */
 body {
     overflow-x: hidden; 
@@ -755,7 +761,7 @@ footer {
     #header {
         padding: 1.2rem 0;
     }
-    
+
     #header[on-screen="initial"],
     #header[on-screen="partial"],
     #header[on-screen="full"] {
