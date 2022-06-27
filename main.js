@@ -7,11 +7,13 @@ const crossLR = document.getElementById("cross-lr");
 const crossRL = document.getElementById("cross-rl");
 const header = document.getElementById("header");
 
+// Hamburger button's lines
 const lines = Array(hambTop, hambMid, hambBtm, crossLR, crossRL);
 
-// Making it work
+// Make it work
 function toggleNavMenu() {
-    // Toggle button
+    
+    // Toggle button: hamburger - cross 
     for (let line of lines) {
         if (line.getAttribute("on-screen") === "initial") {
             if (line.className[0] === "h") {
@@ -34,7 +36,7 @@ function toggleNavMenu() {
     }
 
 
-    // Toggle menu
+    // Toggle header: partial - full 
     if (header.getAttribute("on-screen") === "partial" || header.getAttribute("on-screen") === "initial") {
         header.setAttribute("on-screen", "full"); 
     } else if (header.getAttribute("on-screen") === "full") {
