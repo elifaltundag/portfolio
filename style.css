@@ -8,12 +8,12 @@
     --ff-monosp: 'Inconsolata', monospace;
     
     /** Colors */ 
-    --clr-dark: 0, 0%, 15%;
+    --clr-dark: 0, 0%, 11%;
     --clr-light: 0, 0%, 80%;
     --clr-base-dark: 190, 65%, 15%; 
     --clr-base-light: 190, 65%, 35%;
-    --clr-accent-dark: 0, 80%, 62%;
-    --clr-accent-light: 0, 90%, 70%;
+    --clr-accent-dark: 0, 62%, 62%;
+    --clr-accent-light: 0, 62%, 68%;
 
     /** Margins and paddings */
     --pad-sctn: 1em;
