@@ -172,6 +172,7 @@ label, input, textarea {
     width: min(100%, 1800px);
     margin: 0 auto;
     padding: 0 clamp(0.5rem, 0.2rem + 5vw, 5rem);
+    position: relative;
 }
 
 .section {
@@ -183,17 +184,223 @@ label, input, textarea {
     color: hsl(var(--clr-accent-light));
 }
 
+
+/*! -------------------- */
+/*! LINKS                */
+/*! -------------------- */
+.nav__link {
+    color: hsl(var(--clr-light));
+}
+
+
+/*! -------------------- */
+/*! BUTTONS              */
+/*! -------------------- */
+.btn__container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    row-gap: 0.5rem;
+}
+
+.btn {
+    font-family: var(--ff-sans-serif);
+    padding: 0.5em 1em;
+    border-radius: var(--br-btn);
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    width: min(75%, 20ch);
+
+    transform: scale(1);
+    transition: transform 200ms ease;
+}
+
+.btn-primary {
+    background-color: hsl(var(--clr-accent-light));
+    color: hsl(var(--clr-dark));
+    border: 3px solid hsl(var(--clr-accent-light));
+    box-shadow: 
+        inset 0px 3px 0 hsl( var(--clr-dark) ),
+        inset 0px -3px 0 hsl( var(--clr-dark) ),
+        inset 3px 0 hsl( var(--clr-dark) ),
+        inset -3px 0 hsl( var(--clr-dark) );
+    font-weight: 700;
+}
+
+.btn-secondary {
+    background-color: hsl(var(--clr-dark));
+    color: hsl(var(--clr-accent-light));
+    border: 3px solid hsl(var(--clr-accent-light));
+    font-weight: 600;
+}
+
+
+/** Button states */
+.btn:focus {
+    transform: scale(1.05);
+    filter: brightness(120%) saturate(130%);
+    outline: 2px solid hsl(var(--clr-light));
+    outline-offset: 2px;
+}
+
+@media screen and (hover) {
+    .btn:hover {
+        transform: scale(1.05);
+        filter: brightness(120%) saturate(130%);
+    }
+}
+
+.btn:active {
+    transform: scale(0.98);
+    filter: brightness(90%);
+    outline: 0;
+}
+
+.link-external {
+    display: inline-block;
+    width: 100%;
+}
+
 /*! -------------------- */
 /*! HEADER               */
 /*! -------------------- */
 header {
     background-color: hsl(var(--clr-base-dark));
+    padding: 3rem 0;
+}
+
+#header[on-screen="initial"],
+#header[on-screen="partial"] {
+    transform: translateY(-70%);
+}
+
+#header[on-screen="partial"] {
+    transition: transform 400ms ease;
+}
+
+#header[on-screen="full"] {
+    transform: translateY(0%);
+    transition: transform 400ms ease;
 }
 
 
 /*! -------------------- */
 /*! NAVBAR               */
 /*! -------------------- */
+#nav__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+/* #nav__list[on-screen="false"] {
+    transform: translateY(-200%);
+}
+
+#nav__list[on-screen="true"] {
+    transform: translateY(100%);
+} */
+
+/*! -------------------- */
+/*! HAMBURGER & CROSS    */
+/*! -------------------- */
+#nav-toggle {
+    background-color: transparent;
+    border: transparent;
+    padding: 1rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 5;
+}
+
+#hamburger-btn {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.hamburger,
+.cross {
+    background-color: hsl(var(--clr-light));
+    width: 40px;
+    height: 4px;
+    border-radius: 10px;
+}
+
+#hamb-top[on-screen="false"] {
+    transform: translateX(200%);
+    opacity: 0;
+    transition: transform 400ms ease, opacity 400ms ease;
+}
+
+#hamb-mid[on-screen="false"] {
+    transform: translateX(200%);
+    opacity: 0;
+    transition: transform 400ms ease 100ms, opacity 400ms ease 100ms;
+}
+
+#hamb-btm[on-screen="false"] {
+    transform: translateX(200%);
+    opacity: 0;
+    transition: transform 400ms ease 200ms, opacity 400ms ease 200ms;
+}
+
+#hamb-top[on-screen="true"] {
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform 400ms ease 200ms, opacity 400ms ease 200ms;
+}
+
+#hamb-mid[on-screen="true"] {
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform 400ms ease 300ms, opacity 400ms ease 300ms;
+}
+
+#hamb-btm[on-screen="true"] {
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform 400ms ease 400ms, opacity 400ms ease 400ms;
+}
+
+#cross-lr[on-screen="initial"] {
+    opacity: 0;
+    transform: translateX(-20px) translateY(-30px) rotate(45deg);
+}
+
+#cross-rl[on-screen="initial"] {
+    opacity: 0;
+    transform: translateX(20px) translateY(-34px)rotate(-45deg);
+}
+
+#cross-lr[on-screen="true"] {
+    opacity: 1;
+    transform: translateX(0) translateY(-10px) rotate(45deg);
+    transition: transform 400ms ease 400ms, opacity 400ms ease 400ms;
+}
+
+#cross-rl[on-screen="true"] {
+    opacity: 1;
+    transform: translateX(0) translateY(-14px) rotate(-45deg);
+    transition: transform 400ms ease 500ms, opacity 400ms ease 500ms;
+}
+
+#cross-lr[on-screen="false"] {
+    opacity: 0;
+    transform: translateX(20px) translateY(10px) rotate(45deg);
+    transition: transform 400ms ease, opacity 400ms ease;
+}
+
+#cross-rl[on-screen="false"] {
+    opacity: 0;
+    transform: translateX(-20px) translateY(14px) rotate(-45deg);
+    transition: transform 400ms ease 50ms, opacity 400ms ease 50ms;
+}
+
 
 
 /*! -------------------- */
@@ -256,7 +463,6 @@ header {
     flex-direction: column;
     row-gap: 5vw;
 }
-
 
 
 
@@ -427,74 +633,7 @@ footer {
     background-color: hsl(var(--clr-dark));
 }
 
-/*! -------------------- */
-/*! BUTTONS              */
-/*! -------------------- */
-.btn__container {
-    display: flex;
-    flex-direction: column;
-    padding-top: 3rem;
-    row-gap: 0.5rem;
-}
 
-.btn {
-    font-family: var(--ff-sans-serif);
-    padding: 0.5em 1em;
-    border-radius: var(--br-btn);
-    overflow: hidden;
-    cursor: pointer;
-    border: none;
-    width: min(75%, 20ch);
-
-    transform: scale(1);
-    transition: transform 200ms ease;
-}
-
-.btn-primary {
-    background-color: hsl(var(--clr-accent-light));
-    color: hsl(var(--clr-dark));
-    border: 3px solid hsl(var(--clr-accent-light));
-    box-shadow: 
-        inset 0px 3px 0 hsl( var(--clr-dark) ),
-        inset 0px -3px 0 hsl( var(--clr-dark) ),
-        inset 3px 0 hsl( var(--clr-dark) ),
-        inset -3px 0 hsl( var(--clr-dark) );
-    font-weight: 700;
-}
-
-.btn-secondary {
-    background-color: hsl(var(--clr-dark));
-    color: hsl(var(--clr-accent-light));
-    border: 3px solid hsl(var(--clr-accent-light));
-    font-weight: 600;
-}
-
-
-/** Button states */
-.btn:focus {
-    transform: scale(1.05);
-    filter: brightness(120%) saturate(130%);
-    outline: 2px solid hsl(var(--clr-light));
-    outline-offset: 2px;
-}
-
-@media screen and (hover) {
-    .btn:hover {
-        transform: scale(1.05);
-        filter: brightness(120%) saturate(130%);
-    }
-}
-
-.btn:active {
-    transform: scale(0.98);
-    filter: brightness(90%);
-    outline: 0;
-}
-
-.link-external {
-    display: inline-block;
-    width: 100%;
-}
 
 
 

@@ -18,16 +18,27 @@
     <link rel="stylesheet" href="style.css" type="text/css">
 
     <!-- JS -->
-    <script></script>
+    <script src="main.js" defer></script>
 </head>
 <body>
-    <header>
+    <div class="container">
+        <button id="nav-toggle" aria-controls="header">
+            <div id="hamburger-btn">
+                <div class="hamburger" id="hamb-top" on-screen="initial"></div>
+                <div class="hamburger" id="hamb-mid" on-screen="initial"></div>
+                <div class="hamburger" id="hamb-btm" on-screen="initial"></div>
+            </div>
+            <div id="cross-btn">
+                <div class="cross" id="cross-lr" on-screen="initial"></div>
+                <div class="cross" id="cross-rl"on-screen="initial"></div>
+            </div>
+        </button>
+    </div>
+
+    <header id="header" on-screen="initial">
         <div class="container">
-            <button class="nav-toggle" aria-label="toggle-navigation">
-                <span class="hamburger"></span>
-            </button>
-            <nav class="nav">
-                <ul class="nav__list">
+            <nav id="nav">
+                <ul id="nav__list">
                     <li class="nav__item"><a href="#hero" class="nav__link">Home</a></li>
                     <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
                     <li class="nav__item"><a href="#considerations" class="nav__link">Considerations</a></li>
