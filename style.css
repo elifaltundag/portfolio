@@ -180,6 +180,10 @@ label, input, textarea {
     font-size: clamp(1.6rem, 1.2rem + 1.5vw, 3rem);
 }
 
+.social-media__link {
+    font-size: clamp(1rem, 0.8rem + 0.5vw, 1.2rem);
+}
+
 
 
 /*! -------------------- */
@@ -221,7 +225,6 @@ a:visited {
     }
 }
 
-
 a:active {
     transform: scale(98%);
 }
@@ -231,9 +234,7 @@ a:focus {
     outline: transparent;
 }
 
-
-
-
+/** Nav links */
 .nav__link, .nav__link:link {
     position: relative;
     padding: 0.5em;
@@ -251,9 +252,9 @@ a:focus {
     content: "";
     position: absolute;
     bottom: 10%;
-    left: 0;
+    left: 0.5em;
     height: 2px;
-    width: 100%;
+    width: calc(100% - 1em);
     border-radius: 2px;
     background-color: hsl(var(--clr-light));
 
@@ -265,14 +266,12 @@ a:focus {
 @media screen and (hover) {
     .nav__link:hover {
         transform: translateY(-15%);
-        
     }
 
     .nav__link:hover::before {
         transform-origin: left;
         transform: scaleX(1);
     }
-
 }
 
 .nav__link:active {
@@ -282,7 +281,47 @@ a:focus {
 
 .nav__link:focus {
     border-radius: var(--br-btn);
+    border: none;
     outline: 1px solid hsl(var(--clr-light));
+}
+
+/** Footer - social media links */
+
+.social-media__link, .social-media__link:link {
+    position: relative;
+    padding: 0.5em;
+}
+
+.social-media__link::before {
+    content: "";
+    position: absolute;
+    bottom: 10%;
+    left: 0.5em;
+    height: 2px;
+    width: calc(100% - 1em);
+    border-radius: 2px;
+    background-color: hsl(var(--clr-accent-light));
+
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 200ms ease;
+}
+
+@media screen and (hover) {
+    .social-media__link:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+}
+
+.social-media__link:active {
+    transform: scale(98%);
+}
+
+.social-media__link:focus {
+    border-radius: var(--br-btn);
+    border: none;
+    outline: 1px solid hsl(var(--clr-accent-light));
 }
 
 
@@ -734,6 +773,14 @@ input, textarea {
 /*! -------------------- */
 footer {
     background-color: hsl(var(--clr-dark));
+}
+
+.social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 1em;
+    padding: 2em;
 }
 
 
