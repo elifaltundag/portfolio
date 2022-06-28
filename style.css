@@ -55,7 +55,7 @@ body {
     min-height: 100vh;
     font-family: var(--ff-sans-serif);
 
-    background-color: hsl(var(--clr-light));
+    background-color: hsl(var(--clr-dark));
     color: hsl(var(--clr-light));
 
     display: flex;
@@ -73,6 +73,7 @@ figure {
 /** Reset links */
 a {
     text-decoration: none;
+    display: inline-block;
 }
 
 /** Reset list styling */
@@ -139,7 +140,7 @@ ul, ol, li {
 
 .nav__link {
     font-family: var(--ff-serif);
-    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+    font-size: clamp(1.2rem, 1rem + 0.6vw, 1.5rem);
     font-weight: 500;
 }
 
@@ -203,8 +204,78 @@ label, input, textarea {
 /*! -------------------- */
 /*! LINKS                */
 /*! -------------------- */
-.nav__link {
+a, a:link {
+    color: hsl(var(--clr-accent-light));
+}
+
+a:visited {
+    color: hsla(var(--clr-accent-light), 0.5);
+}
+
+a:hover {
+    
+}
+
+a:active {
+
+}
+
+a:focus {
+
+}
+
+
+
+
+.nav__link, .nav__link:link {
+    position: relative;
+    padding: 0.5em;
     color: hsl(var(--clr-light));
+
+    transition: transform 250ms ease 200ms, filter 100ms ease;
+}
+
+
+.nav__link:visited {
+    color: hsla(var(--clr-light), 0.5);
+}
+
+.nav__link::before {
+    content: "";
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    border-radius: 2px;
+    background-color: hsl(var(--clr-light));
+
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 200ms ease;
+}
+
+@media screen and (hover) {
+    .nav__link:hover {
+        transform: translateY(-15%);
+        
+    }
+
+    .nav__link:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+}
+
+.nav__link:active {
+    filter: brightness(120%);
+    transform: scale(98%);
+}
+
+.nav__link:focus {
+    border-radius: var(--br-btn);
+    outline: 1px solid hsl(var(--clr-light));
 }
 
 
@@ -287,13 +358,13 @@ label, input, textarea {
     width: 100%;
     top: 0;
     z-index: 10;
-    /* border-bottom: 2px solid hsl(var(--clr-light)); */
+    border-bottom: 2px solid hsl(var(--clr-light));
 }
 
 #header[on-screen="initial"],
 #header[on-screen="partial"] {
     transform-origin: top;
-    transform: translateY(-75%);
+    transform: translateY(-80%);
 }
 
 #header[on-screen="partial"] {
@@ -422,7 +493,7 @@ label, input, textarea {
 #cross-rl[on-screen="false"] {
     opacity: 0;
     transform: translateX(-20px) translateY(14px) rotate(-45deg);
-    transition: transform 400ms ease 50ms, opacity 400ms ease 50ms;
+    transition: transform 400ms ease 100ms, opacity 400ms ease 100ms;
 }
 
 
@@ -759,7 +830,7 @@ footer {
 
 @media screen and (min-width: 900px) { /** Tablet */
     #header {
-        padding: 1.2rem 0;
+        padding: 0.7rem 0;
     }
 
     #header[on-screen="initial"],
