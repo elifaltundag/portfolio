@@ -181,7 +181,7 @@ label, input, textarea {
 }
 
 .social-media__link {
-    font-size: clamp(1rem, 0.8rem + 0.5vw, 1.2rem);
+    font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.4rem);
 }
 
 
@@ -286,7 +286,6 @@ a:focus {
 }
 
 /** Footer - social media links */
-
 .social-media__link, .social-media__link:link {
     position: relative;
     padding: 0.5em;
@@ -773,6 +772,12 @@ input, textarea {
 /*! -------------------- */
 footer {
     background-color: hsl(var(--clr-dark));
+    padding: 2em;
+}
+
+.copyright {
+    text-align: center;
+    margin: 0 auto;
 }
 
 .social-media {
@@ -780,7 +785,7 @@ footer {
     flex-direction: row;
     justify-content: center;
     column-gap: 1em;
-    padding: 2em;
+    padding: 1em;
 }
 
 
