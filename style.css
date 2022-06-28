@@ -126,11 +126,12 @@ ul, ol, li {
     line-height: 1;
 }
 
-.hero__subtitle {
+.hero__subtitle > p {
     font-family: var(--ff-serif);
-    font-size: clamp(1.2rem, 1rem + 1vw, 2.5rem);
+    font-size: clamp(1.5rem, 1rem + 1vw, 2.5rem);
     font-weight: 400;
     color: hsl(var(--clr-accent-light));
+    display: block;
 }
 
 .contact-sharing__title {
@@ -493,7 +494,7 @@ a:focus {
 #cross-rl[on-screen="false"] {
     opacity: 0;
     transform: translateX(-20px) translateY(14px) rotate(-45deg);
-    transition: transform 400ms ease 100ms, opacity 400ms ease 100ms;
+    transition: transform 400ms ease 200ms, opacity 400ms ease 200ms;
 }
 
 
@@ -524,7 +525,8 @@ a:focus {
 }
 
 .hero__subtitle {
-    margin-bottom: 0.7em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
 }
 
 .hero__photo {
@@ -754,6 +756,14 @@ footer {
     .hero {
         grid-template-rows: 1;
         grid-template-areas: "txt txt txt txt txt txt txt txt . img img img";
+    }
+
+    .hero__subtitle > p {
+        font-family: var(--ff-serif);
+        font-size: clamp(1.2rem, 1rem + 1vw, 2.5rem);
+        font-weight: 400;
+        color: hsl(var(--clr-accent-light));
+        display: inline-block;
     }
 
     .hero__text {
