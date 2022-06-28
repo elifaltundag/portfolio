@@ -207,22 +207,28 @@ label, input, textarea {
 /*! -------------------- */
 a, a:link {
     color: hsl(var(--clr-accent-light));
+    transition: font-weight 100ms ease;
+    font-weight: 500;
 }
 
 a:visited {
     color: hsla(var(--clr-accent-light), 0.5);
 }
 
-a:hover {
-    
+@media screen and (hover) {
+    a:hover {
+        font-weight: 600;
+    }
 }
 
-a:active {
 
+a:active {
+    transform: scale(98%);
 }
 
 a:focus {
-
+    border-bottom: 1px solid hsl(var(--clr-accent-light));
+    outline: transparent;
 }
 
 
@@ -346,7 +352,7 @@ a:focus {
 
 .link-external {
     display: inline-block;
-    width: 100%;
+    margin: 0 auto;
 }
 
 /*! -------------------- */
