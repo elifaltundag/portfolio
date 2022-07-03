@@ -50,7 +50,5 @@ btnNavToggle.addEventListener("click", toggleNavMenu);
 document.addEventListener("click", (e) => {
     const navbarIds = ["nav-toggle", "hamburger-btn", "hamb-top", "hamb-mid", "hamb-btm", "cross-lr", "cross-rl", "header", "nav__list"];
 
-    if (navbarIds.every(idName => idName !== e.target.id)) {
-        toggleNavMenu();
-    }
+   
 })
