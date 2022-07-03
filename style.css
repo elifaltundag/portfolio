@@ -662,6 +662,7 @@ a:focus {
 #prj__palindrome,
 #prj__sorted-arr,
 #prj__scm-range {
+    background-color: hsl(var(--clr-light));
     background-size: contain;
     background-position: top;
     background-repeat: no-repeat;
@@ -671,6 +672,10 @@ a:focus {
 /* #prj__documentation {
     background-image: url("https://github.com/elifaltundag/portfolio-website/blob/main/images/thumbnails/ss_on_screens/documentation_laptop.jpeg?raw=true");    
 } */
+
+#prj__landing {
+    background-image: url("./images/thumbnails/landing_page/thmb__template.png");
+}
 
 
 /*! -------------------- */
@@ -757,6 +762,7 @@ input, textarea {
 }
 
 ::placeholder {
+    font-family: var(--ff-sans-serif);
     color: hsla(var(--clr-light), 0.6);
 }
 
@@ -777,7 +783,6 @@ footer {
 
 .copyright {
     text-align: center;
-    margin: 0 auto;
 }
 
 .social-media {
