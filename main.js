@@ -50,5 +50,20 @@ btnNavToggle.addEventListener("click", toggleNavMenu);
 document.addEventListener("click", (e) => {
     const navbarIds = ["nav-toggle", "hamburger-btn", "hamb-top", "hamb-mid", "hamb-btm", "cross-lr", "cross-rl", "header", "nav__list"];
 
-   
+   if (navbarIds.every(idName => e.target.id !== idName)) {
+        header.setAttribute("on-screen", "partial");
+        for (let line of lines) {
+            if (line.className[0] === "h") {
+                line.setAttribute("on-screen", "true");
+            } else if (line.className[0] === "c") {
+                line.setAttribute("on-screen", "false");
+                setTimeout(() => {
+                    line.setAttribute("on-screen", "initial")
+                }, 500);
+            }
+        }
+   }
 })
+
+
+
