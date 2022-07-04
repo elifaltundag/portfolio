@@ -27,6 +27,8 @@
     --br-thmb: 1rem;
     --br-btn: 0.75rem;
     --br-form-elm: 0.5rem;
+
+    color: #cccccc;
     
 }
 
@@ -166,6 +168,15 @@ label, input, textarea {
 #btn__about-me,
 #submit-form {
     font-size: clamp(1.1rem, 0.8rem + 1vw, 1.5rem);
+}
+
+.thmb__title {
+    font-size: clamp(1rem, 0.9rem + 0.8vw, 1.4rem);
+}
+
+.thmb__body {
+    font-size: clamp(0.9rem, 0.7rem + 0.6vw, 1.2rem);
+    font-weight: 500;
 }
 
 .consd__title {
@@ -330,7 +341,6 @@ a:focus {
 .btn__container {
     display: flex;
     flex-direction: column;
-    padding-top: 3rem;
     row-gap: 0.5rem;
 }
 
@@ -402,7 +412,7 @@ a:focus {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 10;
+    z-index: 100;
     border-bottom: 2px solid hsl(var(--clr-light));
 }
 
@@ -444,7 +454,7 @@ a:focus {
 .container__nav-toggle {
     position: sticky;
     top: 0;
-    z-index: 15;
+    z-index: 150;
 }
 
 #nav-toggle {
@@ -454,7 +464,6 @@ a:focus {
     position: absolute;
     right: 1rem;
     top: 0.5rem;
-    z-index: 20;
 }
 
 #hamburger-btn {
@@ -614,67 +623,73 @@ a:focus {
     width: min(100%, 400px);
     min-height: 250px;
     margin: 0 auto;
-    background-image: linear-gradient(180deg, 
+    /* background-image: linear-gradient(180deg, 
         hsl(var(--clr-light)) 0%,
-        hsl(var(--clr-dark)) 100%);
-    color: hsl(var(--clr-accent-light));
+        hsl(var(--clr-dark)) 100%); */
+    /* background-color: hsla(var(--clr-light), 0.3); */
+    /* color: hsl(var(--clr-dark)); */
+    background-color: hsla(var(--clr-dark), 0.5);
     text-align: center;
     
     border-radius: var(--br-thmb);
     border: none;
     position: relative;
-}
-
-.thmb__text {
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(180deg, 
-        hsla(var(--clr-dark), 0.1) 0%,
-        hsla(var(--clr-dark), 0.2) 10%,
-        hsla(var(--clr-dark), 0.3) 20%,
-        hsla(var(--clr-dark), 0.4) 30%,
-        hsla(var(--clr-dark), 0.5) 40%,
-        hsla(var(--clr-dark), 0.62) 50%,
-        hsla(var(--clr-dark), 0.75) 60%,
-        hsla(var(--clr-dark), 0.87) 70%,
-        hsla(var(--clr-dark), 0.95) 80%,
-        hsla(var(--clr-dark), 1) 90%);
-    width: 100%;
-    height: 100%;
+    overflow-y: hidden;
     z-index: 2;
 
     display: flex;
     flex-direction: column;
+}
+
+.thmb__text {
+    /* position: absolute;
+    inset: 0; */
+    background-image: linear-gradient(180deg, 
+        hsla(var(--clr-dark), 0.0) 0%,
+        /* hsla(var(--clr-dark), 0.1) %,
+        hsla(var(--clr-dark), 0.2) %,
+        hsla(var(--clr-dark), 0.3) %,
+        hsla(var(--clr-dark), 0.4) %, */
+        /* hsla(var(--clr-dark), 0.5) 30%, */
+       /*  hsla(var(--clr-dark), 0.6) %,
+        hsla(var(--clr-dark), 0.7) %,
+        hsla(var(--clr-dark), 0.8) %,
+        hsla(var(--clr-dark), 0.9) %, */
+        hsla(var(--clr-dark), 1.0) 95%);
+    background-image: none;
+    
+    width: 100%;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5em;
     justify-content: flex-end;
-    padding: 1em;
+    padding: 1em 0;
+
+    /* display: none; */
+
+    /* transform: translateY(42%); */
 }
 
-.thmb__title, .thmb__body {
-    z-index: 5;
+.thmb__text__info {
+    padding: 0.5em 0;
 }
 
-
-#prj__landing, 
-#prj__documentation, 
-#prj__tribute, 
-#prj__form,
-#prj__stut-facts,
-#prj__palindrome,
-#prj__sorted-arr,
-#prj__scm-range {
-    background-color: hsl(var(--clr-light));
-    background-size: contain;
-    background-position: top;
-    background-repeat: no-repeat;
+.thmb__img-container {
     overflow: hidden;
+    background-color: hsla(var(--clr-light), 0.95);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* #prj__documentation {
-    background-image: url("https://github.com/elifaltundag/portfolio-website/blob/main/images/thumbnails/ss_on_screens/documentation_laptop.jpeg?raw=true");    
-} */
-
-#prj__landing {
-    background-image: url("./images/thumbnails/landing_page/thmb__template.png");
+.thmb__img {
+    width: 100%;
+    aspect-ratio: 1.42;
+    object-fit: cover;
+    object-position: center;
 }
 
 
@@ -811,7 +826,6 @@ footer {
 
     .section__title {
         text-align: left;
-        /* grid-column: 1 / 13; */
     }
 
     

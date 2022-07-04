@@ -1,16 +1,16 @@
 // ELEMENTS
+const header = document.getElementById("header");
 const btnNavToggle = document.getElementById("nav-toggle");
 const hambTop = document.getElementById("hamb-top");
 const hambMid = document.getElementById("hamb-mid");
 const hambBtm = document.getElementById("hamb-btm");
 const crossLR = document.getElementById("cross-lr");
 const crossRL = document.getElementById("cross-rl");
-const header = document.getElementById("header");
 
 // Hamburger button's lines
 const lines = Array(hambTop, hambMid, hambBtm, crossLR, crossRL);
 
-// Make it work
+
 function toggleNavMenu() {
     
     // Toggle button: hamburger - cross 
@@ -50,7 +50,7 @@ btnNavToggle.addEventListener("click", toggleNavMenu);
 document.addEventListener("click", (e) => {
     const navbarIds = ["nav-toggle", "hamburger-btn", "hamb-top", "hamb-mid", "hamb-btm", "cross-lr", "cross-rl", "header", "nav__list"];
 
-   if (navbarIds.every(idName => e.target.id !== idName)) {
+    if (navbarIds.every(idName => e.target.id !== idName)) {
         header.setAttribute("on-screen", "partial");
         for (let line of lines) {
             if (line.className[0] === "h") {
