@@ -796,8 +796,12 @@ a:focus {
     text-align: center;
 }
 
+.contact-sharing__title {
+    margin-top: 2em;
+}
+
 .contact-sharing__subtitle {
-    text-align: center;
+    margin-top: 1em;
 }
 
 
@@ -1028,8 +1032,7 @@ footer {
     }
 
     .section__subtitle__contact,
-    .contact-sharing__title,
-    .contact-sharing__subtitle {
+    .contact-sharing__title {
         text-align: left;
     }
 
