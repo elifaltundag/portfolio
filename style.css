@@ -26,12 +26,8 @@
     --br-form: 1rem;
     --br-thmb: 1rem;
     --br-btn: 0.75rem;
-    --br-form-elm: 0.5rem;
-
-    color: #cccccc;
-    
+    --br-form-elm: 0.5rem;    
 }
-
 
 
 /*! -------------------- */
@@ -1047,3 +1043,5 @@ footer {
         grid-template-rows: 1fr;
     }
 }
+
+
