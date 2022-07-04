@@ -226,9 +226,9 @@ a, a:link {
     font-weight: 500;
 }
 
-a:visited {
+/* a:visited {
     color: hsla(var(--clr-accent-light), 0.5);
-}
+} */
 
 @media screen and (hover) {
     a:hover {
@@ -334,6 +334,64 @@ a:focus {
     outline: 1px solid hsl(var(--clr-accent-light));
 }
 
+/** Thumbnail links */
+.link-external, .link-external:link {
+    display: inline-block;
+    margin: 0 auto;
+
+    font-family: var(--ff-sans-serif);
+    padding: 0.5em 1em;
+    border-radius: var(--br-btn);
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    width: 20ch;
+
+    transform: scale(1);
+    transition: transform 200ms ease;
+}
+
+
+
+.link-external__primary, .link-external__primary:link  {
+    background-color: hsl(var(--clr-accent-light));
+    color: hsl(var(--clr-dark));
+    border: 3px solid hsl(var(--clr-accent-light));
+    box-shadow: 
+        inset 0px 3px 0 hsl( var(--clr-dark) ),
+        inset 0px -3px 0 hsl( var(--clr-dark) ),
+        inset 3px 0 hsl( var(--clr-dark) ),
+        inset -3px 0 hsl( var(--clr-dark) );
+    font-weight: 700;
+}
+
+.link-external__secondary, .link-external__secondary:link  {
+    background-color: hsl(var(--clr-dark));
+    color: hsl(var(--clr-accent-light));
+    border: 3px solid hsl(var(--clr-accent-light));
+    font-weight: 600;
+}
+
+/** Thumbnail links states */
+.link-external:focus {
+    transform: scale(1.05);
+    filter: brightness(120%) saturate(130%);
+    outline: 2px solid hsl(var(--clr-light));
+    outline-offset: 2px;
+}
+
+@media screen and (hover) {
+    .link-external:hover {
+        transform: scale(1.05);
+        filter: brightness(120%) saturate(130%);
+    }
+}
+
+.link-external:active {
+    transform: scale(0.98);
+    filter: brightness(90%);
+    outline: 0;
+}
 
 /*! -------------------- */
 /*! BUTTONS              */
@@ -398,10 +456,6 @@ a:focus {
     outline: 0;
 }
 
-.link-external {
-    display: inline-block;
-    margin: 0 auto;
-}
 
 /*! -------------------- */
 /*! HEADER               */
@@ -666,14 +720,16 @@ a:focus {
     row-gap: 1.5em;
     justify-content: flex-end;
     padding: 1em 0;
-
-    /* display: none; */
-
-    /* transform: translateY(42%); */
 }
 
 .thmb__text__info {
     padding: 0.5em 0;
+}
+
+.thmb__text__btns {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
 }
 
 .thmb__img-container {
