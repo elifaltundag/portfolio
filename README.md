@@ -16,6 +16,10 @@ This is my first portfolio website to display my work and reach out to the world
 * VS Code
 
 ## Further Improvements
+* Make it a multi-page website: 
+    About me: Background, certificates, social media 
+    Projects: Previews on different screens and details  
+    Considerations: Add more considerations and shorten considerations paragraphs on home page 
 * Testimonials after getting few
 * Generative art experiments section in work
 * Scroll animations 
