@@ -146,10 +146,10 @@ ul, ol, li {
 
 /** Sans-serif */
 p {
-    font-size: clamp(1rem, 0.8rem + 0.5vw, 1.2rem);
+    font-size: clamp(1rem, 0.8rem + 0.5vw, 1.25rem);
 }
 
-label, input, textarea {
+a, label, input, textarea {
     font-size: clamp(1rem, 0.9rem + 0.8vw, 1.4rem);
 }
 
