@@ -950,6 +950,7 @@ footer {
     /** Considerations */
     .consd__container {
         grid-template-rows: 1fr;
+        grid-template-columns: repeat(12, 1fr);
         grid-template-areas: "idnt idnt idnt idnt accs accs accs accs resp resp resp resp";
         column-gap: 5vw;
     }
