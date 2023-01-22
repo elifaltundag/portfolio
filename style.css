@@ -150,7 +150,7 @@ p {
 }
 
 a, label, input, textarea {
-    font-size: clamp(1rem, 0.9rem + 0.8vw, 1.4rem);
+    font-size: clamp(1rem, 0.6rem + 0.5vw, 1.4rem);
 }
 
 .hero__body {
@@ -674,11 +674,6 @@ a:focus {
     width: min(100%, 400px);
     min-height: 250px;
     margin: 0 auto;
-    /* background-image: linear-gradient(180deg, 
-        hsl(var(--clr-light)) 0%,
-        hsl(var(--clr-dark)) 100%); */
-    /* background-color: hsla(var(--clr-light), 0.3); */
-    /* color: hsl(var(--clr-dark)); */
     background-color: hsla(var(--clr-dark), 0.5);
     text-align: center;
     
@@ -692,23 +687,7 @@ a:focus {
     flex-direction: column;
 }
 
-.thmb__text {
-    /* position: absolute;
-    inset: 0; */
-    background-image: linear-gradient(180deg, 
-        hsla(var(--clr-dark), 0.0) 0%,
-        /* hsla(var(--clr-dark), 0.1) %,
-        hsla(var(--clr-dark), 0.2) %,
-        hsla(var(--clr-dark), 0.3) %,
-        hsla(var(--clr-dark), 0.4) %, */
-        /* hsla(var(--clr-dark), 0.5) 30%, */
-       /*  hsla(var(--clr-dark), 0.6) %,
-        hsla(var(--clr-dark), 0.7) %,
-        hsla(var(--clr-dark), 0.8) %,
-        hsla(var(--clr-dark), 0.9) %, */
-        hsla(var(--clr-dark), 1.0) 95%);
-    background-image: none;
-    
+.thmb__text {  
     width: 100%;
     z-index: 10;
 
